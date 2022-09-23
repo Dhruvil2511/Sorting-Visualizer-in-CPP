@@ -1,10 +1,10 @@
 # Sorting-Visualizer-in-CPP
 
-This Visualizer Project was a part of my 2nd Sem Project.
-Visualizing using an ancient library called graphics.h which is 32bit library.
-I could have choose better or newer library but the time was comparitevly less in order to learn concepts of newer library .
-In order to run the program one need to have 32 bit gcc compiler (you can install DEV/C++).
-To install graphics.h library and to add linker.
+This Visualizer Project was a part of my 2nd Sem Project.<br />
+Visualizing using an ancient library called graphics.h which is 32bit library.<br />
+I could have choose better or newer library but the time was comparitevly less in order to learn concepts of newer library .<br />
+In order to run the program one need to have 32 bit gcc compiler (you can install DEV/C++).<br />
+To install graphics.h library and to add linker.<br />
 
 Follow the steps given below:
 1) First install Dev C++ on your Machine.
@@ -32,10 +32,10 @@ https://drive.google.com/drive/folders/1OzQDPPc5URGI0W8eZN1OH0ccX8118w3w?usp=sha
 
 
 NOTE:
--> The graphics.h will work only in the program saved in ".cpp" format.
+-> The graphics.h will work only in the program saved in ".cpp" format.<br />
 To check the graphics.h is working or not
 Create a new console application in ".cpp" format and copy the codes given below, paste it in the
-file you created and click "Build and Run" button or click "F9" key from your keyboard..
+file you created and click "Compile and Run" button or click "F11" key from your keyboard..
 
 ```
 #include<graphics.h>
@@ -54,4 +54,4 @@ This results in following output:
 
 
 
-Cheers! Now You are ready to run the visualizer
+Cheers! Now You are ready to run the Sorting Visualizer.
