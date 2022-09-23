@@ -97,10 +97,9 @@ public:
 
     void insertionSort(vector<int> &integers,int size ,int gap)
     {
-        int N = integers.size();
         int i, j, key;
 
-        for (i = 1; i < N; i++)
+        for (i = 1; i < integers.size(); i++)
         {
             j = i;
             while (j > 0 and integers[j] < integers[j - 1])
@@ -111,6 +110,55 @@ public:
             }
         }
     }
+    
+    void heapify(vector<int> &integers, int N, int i, int size,int gap)
+	{
+	    int largest = i;
+	 	int left = 2 * i + 1;
+	 
+	    int right = 2 * i + 2;
+	 
+	    if (left < N && integers[left] > integers[largest])
+	 
+	        largest = left;
+	 
+	
+	    if (right < N && integers[right] > integers[largest])
+	 
+	        largest = right;
+	 
+	    if (largest != i) {
+	 
+	        swap(integers[i], integers[largest]);
+	        delay(5);
+	         swapLines(gap * i + 1,
+                              gap * (largest) + 1,
+                              integers[largest],
+                              integers[i],size);
+	        
+	 
+	        heapify(integers, N, largest,size,gap);
+	    }
+	}
+    
+    void heapSort(vector<int>&integers,int size,int gap)
+	{
+ 
+	    for (int i = integers.size() / 2 - 1; i >= 0; i--)
+	        heapify(integers, integers.size(), i,size,gap);
+	 
+	    for (int i = integers.size() - 1; i >= 0; i--) 
+		{
+	        swap(integers[0], integers[i]);
+
+	        swapLines(gap * 0,
+                              gap * (i) + 1,
+                              integers[i],
+                              integers[0],size);
+	        
+	        heapify(integers, i, 0,size,gap);
+	    }	
+	}
 
     void CocktailSort(vector<int> &integers,int size,int gap)
     {
@@ -259,8 +307,9 @@ int main()
     cout << "					3)Insertion Sort" << endl;
     cout << "					4)Cocktail Sort" << endl;
     cout << "					5)Quick Sort" << endl;
-    cout << "					6)Odd/Even Sort" << endl;
-    cout<<  "					7)Exit"<<endl;
+      cout << "					6)Heap Sort" << endl;
+    cout << "					7)Odd/Even Sort" << endl;
+    cout<<  "					8)Exit"<<endl;
     cout<<endl;
     cout<<"Your choice: ";
     cin >> choice;
@@ -299,13 +348,16 @@ int main()
 
         break;
     case 6:
-        s.oddEvenSort(integers,size,gap);
+        
+        s.heapSort(integers,size,gap);
 
         break;
     case 7:
-        exit(0);
+        s.oddEvenSort(integers,size,gap);
         break;
-
+	case 8:
+		exit(0);
+		break;
     default:
         cout << "Please enter valid input" << endl;
         break;
@@ -319,7 +371,7 @@ int main()
     closegraph();
     system("cls");
 	
-	}while(choice!=7);
+	}while(choice!=8);
   
     cout << endl;
     delay(5000);
